@@ -1,4 +1,5 @@
-@import "reset.css";
+@import "styles-reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&display=swap");
 
 :root {
   --link: #c7ae20;
@@ -6,6 +7,11 @@
 
 html {
   scroll-behavior: smooth;
+  font-family: Overpass, Arial, Helvetica, sans-serif;
+}
+
+#page > div {
+  margin: 36px 0;
 }
 
 /* Images -------------------------------------------------------------------------*/
