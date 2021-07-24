@@ -27,11 +27,24 @@ $(document).ready(function(){
         let focusPage = "#" + pageID[focusID];
         $(focusPage).addClass("show");
         $(this).addClass("current");
+        updateScroller(focusID);
     });
 
     $("#navtoggle").click(function(){ $("nav").toggleClass("closed"); });
 
+    function updateScroller(currentPage){
+        const SCROLLERHEIGHT = currentPage * 36.8;
+        $("#scroller").css({ "margin-top": SCROLLERHEIGHT });
+    }
+
     // Transitions --------------------------------------------------------------------
+    var delay = ( function() { // Delay showing Transitions 
+        var timer = 0;
+        return function(callback, ms) {
+            clearTimeout (timer);
+            timer = setTimeout(callback, ms);
+        };
+    })();
     delay(function(){addTransition();}, 10 );
     function addTransition(){
         $("nav").css({
