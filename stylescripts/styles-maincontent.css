@@ -39,7 +39,10 @@ body.navclosed #maincontent {
 
 h2, h3, p, ul { width: 100%;}
 
-h2, h3 { text-align: center; }
+h2, h3 { 
+    text-align: center;
+    line-height: 1.2em; 
+}
 
 h2 {
     margin: 0 auto 1.5rem auto;
