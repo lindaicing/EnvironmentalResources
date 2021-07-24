@@ -1,29 +1,14 @@
-@import "styles-reset.css";
-@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&display=swap");
+@import "reset.css"; 
+@import "style-nav.css"; 
+@import "styles-maincontent.css"; 
 
-:root {
-  --link: #c7ae20;
+body {
+  margin: auto;
+  font-family: sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-  font-family: Overpass, Arial, Helvetica, sans-serif;
+div {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-
-#page > div {
-  margin: 36px 0;
-}
-
-/* Images -------------------------------------------------------------------------*/
-
-img {
-  width: 50px;
-}
-
-/* Typography ---------------------------------------------------------------------*/
-
-/* Images -----------------------------------------------------------------------*/
-
-/* Queries ------------------------------------------------------------------------*/
-
-@media only screen and (max-width: 960px) {}

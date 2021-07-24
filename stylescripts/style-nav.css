@@ -1,0 +1,20 @@
+#navlinkslist {
+    display: flex;
+    flex-direction: column;
+}
+  
+.navlinks {
+    background: yellow;
+}
+
+.navlinks.current {
+    background: pink;
+}
+
+.pages {
+    display: none;
+}
+
+.pages.show {
+    display: block;
+}

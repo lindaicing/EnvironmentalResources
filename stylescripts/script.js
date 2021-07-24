@@ -1,43 +1,27 @@
-var darkmode;
+const pageID = ["home", "definition", "legislation_us", "legislation_itl", "timeline", "read", "watch", "projects", "people", "life"] 
+const pageNames = ["Home", "Definitions", "Legislation in US", "Legislation International", "Timeline", "Reading Nook", "Video Corner", "Projects", "People", "Lifestyle"]
+let navLinks = [];
 
-$(window).ready(function(){
-    // Delay showing Transitions ------------------------------------------------------------
-    var delay = ( function() {
-        var timer = 0;
-        return function(callback, ms) {
-            clearTimeout (timer);
-            timer = setTimeout(callback, ms);
-        };
-    })();
+$(document).ready(function(){
+    for(i=0; i<pageID.length; i++) {
+        let setupID = "#"+pageID[i];
+        let setupDirectory = "pages/" + pageID[i] + ".html";
+        $(function(){ $(setupID).load(setupDirectory); });
+        $("#pagelist").append("<div class='pages' id='" + pageID[i] + "'</div>"); 
 
-    delay(function(){addTransition();}, 10 );
-    function addTransition(){
-        $("#page, body, nav, #shrink, #shrink span, #darkmode, #switch, #key div, #ethicli").css({
-            "-webkit-transition":"all 500ms cubic-bezier(0.515, 0, 0.425, 1)",
-            "-webkit-transition":"all 500ms cubic-bezier(0.515, -0.005, 0.425, 1.020)",
-            "-moz-transition":"all 500ms cubic-bezier(0.515, -0.005, 0.425, 1.020)",
-            "-o-transition":"all 500ms cubic-bezier(0.515, -0.005, 0.425, 1.020)",
-            "transition":"all 500ms cubic-bezier(0.515, -0.005, 0.425, 1.020)",
-            "-webkit-transition-timing-function":"cubic-bezier(0.515, 0, 0.425, 1)",
-            "-webkit-transition-timing-function":"cubic-bezier(0.515, -0.005, 0.425, 1.020)",
-            "-moz-transition-timing-function":"cubic-bezier(0.515, -0.005, 0.425, 1.020)",
-            "-o-transition-timing-function":"cubic-bezier(0.515, -0.005, 0.425, 1.020)",
-            "transition-timing-function":"cubic-bezier(0.515, -0.005, 0.425, 1.020)",
-        })
+        navLinks.push("nav_" + pageID[i]) //Setup nav
+        $("#navlinkslist").append("<li class='navlinks' id='" + navLinks[i] + "'>" + pageNames[i] + "</li>"); 
     }
 
-    // Load Components ------------------------------------------------------------
-    
-    $(function(){
-      $("#nav").load("../components/nav.html");
-      $("#footer").load("../components/footer.html");
+    $("#home").addClass("show");
 
-      $("#home").load("../views/home.html"); 
-      $("#terms").load("../views/terms.html"); 
-      $("#laws").load("../views/laws.html"); 
-      $("#timeline").load("../views/timeline.html"); 
-      $("#watch").load("../views/watch.html"); 
-      $("#read").load("../views/read.html"); 
-      $("#peopleprojects").load("../views/peopleprojects.html"); 
+    $(".navlinks").click(function(){
+        $(".navlinks").removeClass("show"); //Hides all link highlights
+        for(i=0; i<pageID.length; i++) { $(".pages").removeClass("show"); } //Hides all pages
+        let locNavID = $(this).attr('id');
+        let focusID = navLinks.indexOf(locNavID); //reverse-search nav link index, lowkey jank
+        let focusPage = "#" + pageID[focusID];
+        $(focusPage).addClass("show");
     });
 })
+
