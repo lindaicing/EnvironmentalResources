@@ -15,6 +15,7 @@ $(document).ready(function(){
 
     $("#home").addClass("show");
     $("#nav_home").addClass("current");
+    $("a").attr("target", "_blank"); //open new pages for all links
 
     // Nav Setup --------------------------------------------------------------------
     $(".navlinks").click(function(){
