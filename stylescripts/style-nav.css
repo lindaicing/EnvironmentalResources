@@ -1,6 +1,9 @@
 #navlinkslist {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    max-width: 260px;
+    /* height: 100vh; */
 }
   
 .navlinks {

@@ -14,14 +14,20 @@ $(document).ready(function(){
     }
 
     $("#home").addClass("show");
+    $("#nav_home").addClass("current");
 
     $(".navlinks").click(function(){
-        $(".navlinks").removeClass("show"); //Hides all link highlights
-        for(i=0; i<pageID.length; i++) { $(".pages").removeClass("show"); } //Hides all pages
+        $(".navlinks").removeClass("current"); //Hides all link highlights
+        for(i=0; i<pageID.length; i++) { 
+            $(".pages").removeClass("show"); 
+        } //Hides all pages
         let locNavID = $(this).attr('id');
         let focusID = navLinks.indexOf(locNavID); //reverse-search nav link index, lowkey jank
         let focusPage = "#" + pageID[focusID];
         $(focusPage).addClass("show");
+        $(this).addClass("current");
     });
+
+    function darkmode(){}; // In Progress
 })
 
