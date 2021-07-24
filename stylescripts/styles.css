@@ -1,10 +1,24 @@
 @import "reset.css"; 
 @import "style-nav.css"; 
 @import "styles-maincontent.css"; 
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --dark: #373741;
+  --brown: #554131;
+  --tan: #B4A99C;
+  --light: #FFFDFB;
+}
 
 body {
+  position: relative;
   margin: auto;
   font-family: sans-serif;
+  display: flex;
+  flex-direction: row;
+  font-family: 'Overpass', sans-serif;
+  font-size: 0.9em;
+  line-height: 1.5em;
 }
 
 div {

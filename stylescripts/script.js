@@ -16,11 +16,12 @@ $(document).ready(function(){
     $("#home").addClass("show");
     $("#nav_home").addClass("current");
 
+    // Nav Setup --------------------------------------------------------------------
     $(".navlinks").click(function(){
         $(".navlinks").removeClass("current"); //Hides all link highlights
         for(i=0; i<pageID.length; i++) { 
-            $(".pages").removeClass("show"); 
-        } //Hides all pages
+            $(".pages").removeClass("show"); //Hides all pages
+        }
         let locNavID = $(this).attr('id');
         let focusID = navLinks.indexOf(locNavID); //reverse-search nav link index, lowkey jank
         let focusPage = "#" + pageID[focusID];
@@ -28,6 +29,18 @@ $(document).ready(function(){
         $(this).addClass("current");
     });
 
+    $("#navtoggle").click(function(){ $("nav").toggleClass("closed"); });
+
+    // Transitions --------------------------------------------------------------------
+    delay(function(){addTransition();}, 10 );
+    function addTransition(){
+        $("nav").css({
+            "transition": "all 800ms cubic-bezier(0.5, 0, 0.5, 1)",
+            "transition-timing-function": "cubic-bezier(0.5, 0, 0.5, 1)"
+        })
+    }
+
+    // Upcoming Functions --------------------------------------------------------------------
     function darkmode(){}; // In Progress
 })
 
