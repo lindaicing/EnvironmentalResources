@@ -4,10 +4,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
+  --darkest: #2c2c35;
   --dark: #373741;
   --brown: #554131;
   --tan: #B4A99C;
+  --tan50: #B4A99C50;
   --light: #FFFDFB;
+  --light20: #FFFDFB20;
+}
+
+html {
+  overflow: overlay;
 }
 
 body {
@@ -19,10 +26,33 @@ body {
   font-family: 'Overpass', sans-serif;
   font-size: 0.9em;
   line-height: 1.5em;
+  background: var(--darkest);
 }
 
 div {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+::selection {
+  background: var(--tan);
+  color: var(--light);
+}
+
+/* Scrollbar -------------------------------------------------------------------- */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fff5;
+  padding: 0 0.25rem;
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #0000;
 }

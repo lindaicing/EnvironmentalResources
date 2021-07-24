@@ -30,7 +30,9 @@ $(document).ready(function(){
         updateScroller(focusID);
     });
 
-    $("#navtoggle").click(function(){ $("nav").toggleClass("closed"); });
+    $("#navtoggle").click(function(){ 
+        $("body").toggleClass("navclosed"); 
+    });
 
     function updateScroller(currentPage){
         const SCROLLERHEIGHT = currentPage * 36.8;
@@ -45,9 +47,9 @@ $(document).ready(function(){
             timer = setTimeout(callback, ms);
         };
     })();
-    delay(function(){addTransition();}, 10 );
-    function addTransition(){
-        $("nav").css({
+    delay(function(){startupTransition();}, 10 );
+    function startupTransition(){
+        $("nav, #maincontent").css({
             "transition": "all 800ms cubic-bezier(0.5, 0, 0.5, 1)",
             "transition-timing-function": "cubic-bezier(0.5, 0, 0.5, 1)"
         })

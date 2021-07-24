@@ -1,14 +1,14 @@
 nav {
-    position: relative;
-    width: 21rem;
+    position: fixed;
+    left: 0;
+    width: 16rem;
     height: 100vh;
     background: var(--dark);
     color: var(--light);
+    z-index: 1;
 }
 
-nav.closed {
-    margin-left: -21rem;
-}
+body.navclosed nav { margin-left: -16rem; }
 
 nav::before {
     content: "";
@@ -23,7 +23,9 @@ nav::before {
     background-size: cover;
 }
 
-#navtoggle, nav.closed #navtoggle {
+/* Nav Toggle -------------------------------------------------------------------- */
+
+#navtoggle, body.navclosed #navtoggle {
     position: absolute;
     display: flex;
     align-items: center;
@@ -34,12 +36,17 @@ nav::before {
     transform: scaleY(2.5);
     font-size: 1.2rem;
     color: var(--tan);
+    transition: all 300ms cubic-bezier(0.5, 0, 0.5, 1);
+    transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
+    cursor: pointer;
 }
 
-nav.closed #navtoggle {
+body.navclosed #navtoggle {
     right: -1.5rem;
-    transform: scaleY(2.5) rotate(180deg);
+    transform: scaleY(2.5) scaleX(-1);
 }
+
+/* Nav Content -------------------------------------------------------------------- */
 
 h1 {
     position: relative;
@@ -52,14 +59,25 @@ h1 {
     position: relative;
     display: flex;
     flex-direction: column;
+    list-style: none;
+    margin-left: 0;
 }
+  
+.navlinks {
+    margin: 0.5rem 2rem 0.5rem 3.5rem;
+    cursor: pointer;
+}
+
+.navlinks.current { color: var(--light); }
+
+/* Scroller -------------------------------------------------------------------- */
 
 #navlinkslist::before {
     content:"";
     display: block;
     position: absolute;
     top: 4%;
-    left: 3rem;
+    left: 2.4rem;
     width: 1px;
     height: 92%;
     background: #fff4;
@@ -69,7 +87,7 @@ h1 {
     display: block;
     position: absolute;
     top: 4%;
-    left: 2.8rem;
+    left: 2.2rem;
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 100%;
@@ -77,15 +95,3 @@ h1 {
     transition: all 300ms cubic-bezier(0.5, 0, 0.5, 1);
     transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
 }
-  
-.navlinks {
-    margin: 0.5rem 2rem 0.5rem 4rem;
-    cursor: pointer;
-}
-
-.navlinks.current {
-    color: var(--light);
-}
-
-.pages { display: none; }
-.pages.show { display: block; }
