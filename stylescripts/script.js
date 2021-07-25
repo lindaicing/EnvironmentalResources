@@ -75,7 +75,13 @@ $(document).ready(function(){
         $(".tags").append(renderedtags);
     }
 
+    // Dark -------------------------------------------------------------------
+    $("#darkmode").click(function(){  
+        $("body").toggleClass("dark"); 
+        localStorage.setItem("Darkmode", $("body").hasClass("dark"));
+    });
+    if(localStorage.getItem("Darkmode")) { $("body").addClass("dark"); }
+
     // Upcoming Functions -------------------------------------------------------------
-    function darkmode(){}; // In Progress
 })
 

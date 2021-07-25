@@ -7,11 +7,14 @@
   --darkest: #2c2c35;
   --dark: #373741;
   --brown: #554131;
+  --darktan: #a7998b;
   --tan: #cec2b6;
   --light: #FFFDFB;
   
-  --lightglass: #5f5c5a50;
-  --lightglassborder: #B4A99C50;
+  --lightglass: #ece8e480;
+  --lightglassborder: #9c8f8130;
+  --darkglass: #5f5c5a50;
+  --darkglassborder: #B4A99C50;
 }
 
 html {
@@ -42,7 +45,6 @@ footer {
   padding-right: 2rem;
   text-align: left;
   font-size: 0.85em;
-  color: var(--tan);
   opacity: 0.65;
   z-index: 1;
 }
@@ -67,4 +69,25 @@ footer {
 
 ::-webkit-scrollbar-track {
   background: #0000;
+}
+
+/* Darkmode ---------------------------------------------------------------------- */
+
+.dark #darkmode:hover, #darkmode {
+  position: absolute;
+  font-size: 1.2rem;
+  bottom: 2.4rem;
+  left: 2.1rem;
+  cursor: pointer;
+  color: var(--light);
+  opacity: 1;
+} 
+
+.dark #darkmode, #darkmode:hover {
+  color: var(--tan);
+  opacity: 0.65;
+}
+
+.dark footer {
+  color: var(--tan);
 }
