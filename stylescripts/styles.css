@@ -7,7 +7,7 @@
   --darkest: #2c2c35;
   --dark: #373741;
   --brown: #554131;
-  --tan: #c2b8ad;
+  --tan: #cec2b6;
   --light: #FFFDFB;
   
   --lightglass: #5f5c5a50;
@@ -16,6 +16,7 @@
 
 html {
   overflow: overlay;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -36,9 +37,19 @@ div {
   flex-direction: column;
 }
 
+footer {
+  margin: 0 auto 2rem 2rem;
+  padding-right: 2rem;
+  text-align: left;
+  font-size: 0.85em;
+  color: var(--tan);
+  opacity: 0.65;
+  z-index: 1;
+}
+
 ::selection {
   background: var(--tan);
-  color: var(--light);
+  color: var(--brown);
 }
 
 /* Scrollbar -------------------------------------------------------------------- */
