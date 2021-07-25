@@ -1,1 +1,1 @@
-$("#maincontent a").attr("target", "_blank"); //open new pages for all links
+$("a").attr("target", "_blank"); //open new pages for all links

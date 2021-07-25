@@ -60,6 +60,7 @@ p, li {
     text-align: left;
     color: var(--tan);
     line-height: 1.5em;
+    margin-bottom: 0.5rem;
 }
 
 a { 
@@ -88,8 +89,8 @@ ul {
     width: 100%;
     padding: 2rem;
     margin: auto 2rem 2rem 2rem;
-    background: var(--light20);
-    border: solid 1px var(--tan50);
+    background: var(--lightglass);
+    border: solid 1px var(--lightglassborder);
     border-radius: 0.5rem;
     box-shadow: 0.25rem 0.25rem .75rem 0 #0002;
     backdrop-filter: blur(4px);

@@ -8,9 +8,10 @@
   --dark: #373741;
   --brown: #554131;
   --tan: #c2b8ad;
-  --tan50: #B4A99C50;
   --light: #FFFDFB;
-  --light20: #FFFDFB20;
+  
+  --lightglass: #5f5c5a50;
+  --lightglassborder: #B4A99C50;
 }
 
 html {
