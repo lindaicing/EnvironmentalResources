@@ -14,6 +14,7 @@ $(document).ready(function(){
     }
 
     $("#home").addClass("show");
+    $(".tags").css({ "display":"none" })
     $("#nav_home").addClass("current");
 
     // Nav Setup ----------------------------------------------------------------------
@@ -38,25 +39,46 @@ $(document).ready(function(){
         const SCROLLERHEIGHT = currentPage * 36.8;
         $("#scroller").css({ "margin-top": SCROLLERHEIGHT });
     }
-    
+
+    // Transitions --------------------------------------------------------------------
+    var delay = ( function() { // Delay showing Transitions 
+        var timer = 0;
+        return function(callback, ms) {
+            clearTimeout (timer);
+            timer = setTimeout(callback, ms);
+        };
+    })();
+    delay(function(){startupTransition();}, 10 );
+    function startupTransition(){
+        $("nav, #maincontent, .pages > div, .tags li").css({
+            "transition": "all 800ms cubic-bezier(0.5, 0, 0.5, 1)",
+            "transition-timing-function": "cubic-bezier(0.5, 0, 0.5, 1)"
+        })
+    }
+
     // Tags ---------------------------------------------------------------------------
     function updateTags(){
-        let tags = [];
-        let renderedtags = "";
-        let H2ID = []
         $(".tags").empty();
+        if($("#home").hasClass("show")) {
+            $(".tags").css({ "display":"none" })
+        } else {
+            $(".tags").css({ "display":"flex" })
+            let tags = [];
+            let renderedtags = "";
+            let H2ID = []
 
-        $(".pages.show h2").each(function(){
-            let H2TEXT = $(this).text();
-            H2ID.push( H2TEXT.replace(/ /g,'') );
-            $(this).attr("id", H2TEXT.replace(/ /g,'')); //Add ID to H2s
-            tags.push($(this).text());
-        })
-
-        for(i=0; i<tags.length; i++){
-            renderedtags +="<li><a href='#"+H2ID[i]+"'>"+tags[i]+"</a></li>";
+            $(".pages.show h2").each(function(){
+                let H2TEXT = $(this).text();
+                H2ID.push( H2TEXT.replace(/ /g,'') );
+                $(this).attr("id", H2TEXT.replace(/ /g,'')); //Add ID to H2s
+                tags.push($(this).text());
+            })
+    
+            for(i=0; i<tags.length; i++){
+                renderedtags +="<li><a href='#"+H2ID[i]+"'>"+tags[i]+"</a></li>";
+            }
+            $(".tags").append(renderedtags);
         }
-        $(".tags").append(renderedtags);
     }
 
     // Dark -------------------------------------------------------------------

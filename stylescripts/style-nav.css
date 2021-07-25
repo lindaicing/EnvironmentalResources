@@ -16,7 +16,7 @@ nav::before {
     left: 0;
     width: 100%; 
     height: 100%;  
-    opacity: .55;
+    opacity: .5;
     background: url(../resources/woodgrain.jpg);
     background-repeat: no-repeat;
     background-size: cover;

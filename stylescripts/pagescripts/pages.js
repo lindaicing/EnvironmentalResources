@@ -9,9 +9,9 @@ var delay = ( function() { // Delay showing Transitions
         timer = setTimeout(callback, ms);
     };
 })();
-delay(function(){startupTransition();}, 10 );
-function startupTransition(){
-    $("nav, #maincontent, .pages > div, .tags li").css({
+delay(function(){glassTransition();}, 10 );
+function glassTransition(){
+    $(".pages > div, .tags li").css({
         "transition": "all 800ms cubic-bezier(0.5, 0, 0.5, 1)",
         "transition-timing-function": "cubic-bezier(0.5, 0, 0.5, 1)"
     })
