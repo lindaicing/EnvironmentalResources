@@ -38,23 +38,7 @@ $(document).ready(function(){
         const SCROLLERHEIGHT = currentPage * 36.8;
         $("#scroller").css({ "margin-top": SCROLLERHEIGHT });
     }
-
-    // Transitions --------------------------------------------------------------------
-    var delay = ( function() { // Delay showing Transitions 
-        var timer = 0;
-        return function(callback, ms) {
-            clearTimeout (timer);
-            timer = setTimeout(callback, ms);
-        };
-    })();
-    delay(function(){startupTransition();}, 10 );
-    function startupTransition(){
-        $("nav, #maincontent").css({
-            "transition": "all 800ms cubic-bezier(0.5, 0, 0.5, 1)",
-            "transition-timing-function": "cubic-bezier(0.5, 0, 0.5, 1)"
-        })
-    }
-
+    
     // Tags ---------------------------------------------------------------------------
     function updateTags(){
         let tags = [];

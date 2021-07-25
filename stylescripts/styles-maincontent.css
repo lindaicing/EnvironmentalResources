@@ -56,9 +56,9 @@ body.navclosed #maincontent {
 .tags li a { 
     display: block;
     padding: 0.25rem 0.5rem;
-    color:var(--darktan); 
+    color:var(--brown);
 }
-.tags li a:hover { color:var(--brown); }
+.tags li a:hover { color:var(--darktan); }
 
 /* Typography ------------------------------------------------------------------ */
 

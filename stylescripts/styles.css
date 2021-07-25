@@ -6,8 +6,8 @@
 :root {
   --darkest: #2c2c35;
   --dark: #373741;
-  --brown: #554131;
-  --darktan: #a7998b;
+  --brown: #695646;
+  --darktan: #9c8e7f;
   --tan: #cec2b6;
   --light: #FFFDFB;
   
@@ -88,6 +88,4 @@ footer {
   opacity: 0.65;
 }
 
-.dark footer {
-  color: var(--tan);
-}
+.dark footer { color: var(--tan); }
