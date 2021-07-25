@@ -1,5 +1,5 @@
-const pageID = ["home", "definition", "legislation_us", "legislation_itl", "timeline", "read", "watch", "projects", "people", "life"] 
-const pageNames = ["Home", "Definitions", "Legislation in US", "Legislation International", "Timeline", "Reading Nook", "Video Corner", "Projects", "People", "Lifestyle"]
+const pageID = ["home", "definition", "legislation_us", "legislation_itl", "timeline", "read", "watch", "listen", "projects", "people", "life"] 
+const pageNames = ["Home", "Definitions", "Legislation in US", "Legislation International", "Timeline", "Reading Nook", "Video Corner", "Podcasts", "Projects", "People", "Lifestyle"]
 let navLinks = [];
 
 $(document).ready(function(){
@@ -15,7 +15,6 @@ $(document).ready(function(){
 
     $("#home").addClass("show");
     $("#nav_home").addClass("current");
-    $("a").attr("target", "_blank"); //open new pages for all links
 
     // Nav Setup --------------------------------------------------------------------
     $(".navlinks").click(function(){

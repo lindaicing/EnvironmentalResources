@@ -43,7 +43,7 @@ nav::before {
 }
 
 body.navclosed #navtoggle {
-    right: -1.5rem;
+    right: -1.4rem;
     transform: scaleY(2.5) scaleX(-1);
 }
 
