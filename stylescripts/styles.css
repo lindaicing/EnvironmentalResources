@@ -1,7 +1,7 @@
 @import "reset.css"; 
 @import "style-nav.css"; 
 @import "styles-maincontent.css"; 
-@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,300;0,900;1,300;1,900&display=swap');
 
 :root {
   --darkest: #2c2c35;
@@ -29,6 +29,7 @@ body {
   display: flex;
   flex-direction: row;
   font-family: 'Overpass', sans-serif;
+  font-weight: 300;
   font-size: 0.9em;
   line-height: 1.5em;
   background: var(--darkest);

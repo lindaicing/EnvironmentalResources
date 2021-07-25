@@ -101,6 +101,8 @@ ul {
     margin-left: 2.5rem;
 }
 
+em { font-weight: 900; }
+
 /* Sections -------------------------------------------------------------------- */
 
 #pagelist {
@@ -138,6 +140,11 @@ ul {
 
 .dark h3, .dark p, .dark li, .dark a:hover {
     color: var(--tan);
+}
+
+.dark em {
+    color: var(--light);
+    opacity: 0.7;
 }
 
 .dark a { color: var(--light); }
