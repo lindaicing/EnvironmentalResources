@@ -37,7 +37,9 @@ $(document).ready(function(){
     $(window).resize(function() { checkMobile(); });
 
     function updateScroller(currentPage){
-        const SCROLLERHEIGHT = currentPage * 37;
+        let navScrollerSpacing = 37;
+        // if($(window).width() < 650) { navScrollerSpacing = 38; }
+        const SCROLLERHEIGHT = currentPage * navScrollerSpacing;
         $("#scroller").css({ "margin-top": SCROLLERHEIGHT });
     }
 
@@ -63,6 +65,7 @@ $(document).ready(function(){
         })
     }
 
+    checkMobile();
     function checkMobile() {
         $("nav, #navlinkslist, #maincontent").css({
             "transition": "none",

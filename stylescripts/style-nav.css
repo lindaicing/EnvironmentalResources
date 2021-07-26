@@ -77,7 +77,7 @@ h1 {
     top: 4%;
     left: 2.4rem;
     width: 1px;
-    height: 92%;
+    height: 23.6rem;
     background: #fff4;
 }
 
@@ -131,10 +131,7 @@ h1 {
         transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
     }
     body.navclosed #navlinkslist { right: -50%; }
-    #navlinkslist::before {
-        top: 5%;
-        height: 54.5%;
-    }
+    #navlinkslist::before { top: 5%; }
     #scroller { top: 5%; }
     #navtoggle, body.navclosed #navtoggle {
         position: fixed;
