@@ -14,6 +14,7 @@
   --lightglass: #ece8e480;
   --lightglassborder: #9c8f8130;
   --darkglass: #5f5c5a50;
+  --darkglass80: #2c2c3580;
   --darkglassborder: #B4A99C50;
 }
 
@@ -73,7 +74,7 @@ footer {
 
 /* Darkmode ---------------------------------------------------------------------- */
 
-.dark #darkmode:hover, #darkmode {
+#darkmode, .dark #darkmode:hover {
   position: absolute;
   font-size: 1.2rem;
   bottom: 2.4rem;
@@ -89,3 +90,14 @@ footer {
 }
 
 .dark footer { color: var(--tan); opacity: 0.75; }
+
+/* Mobile ---------------------------------------------------------------------- */
+
+@media screen and (max-width: 650px) {
+  #darkmode, .dark #darkmode:hover {
+    font-size: 1rem;
+    top: 0.9rem;
+    left: auto;
+    right: 5rem;
+  }
+}

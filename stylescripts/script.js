@@ -34,14 +34,15 @@ $(document).ready(function(){
     });
 
     $("#navtoggle").click(function(){  $("body").toggleClass("navclosed"); });
+    $(window).resize(function() { checkMobile(); });
 
     function updateScroller(currentPage){
-        const SCROLLERHEIGHT = currentPage * 36.8;
+        const SCROLLERHEIGHT = currentPage * 37;
         $("#scroller").css({ "margin-top": SCROLLERHEIGHT });
     }
 
     // Transitions --------------------------------------------------------------------
-    var delay = ( function() { // Delay showing Transitions 
+    let delay = ( function() { // Delay showing Transitions 
         var timer = 0;
         return function(callback, ms) {
             clearTimeout (timer);
@@ -54,6 +55,39 @@ $(document).ready(function(){
             "transition": "all 800ms cubic-bezier(0.5, 0, 0.5, 1)",
             "transition-timing-function": "cubic-bezier(0.5, 0, 0.5, 1)"
         })
+    }
+    function mobileTransition(){
+        $("nav, #navlinkslist, #maincontent, .pages > div, .tags li").css({
+            "transition": "all 800ms cubic-bezier(0.5, 0, 0.5, 1)",
+            "transition-timing-function": "cubic-bezier(0.5, 0, 0.5, 1)"
+        })
+    }
+
+    function checkMobile() {
+        $("nav, #navlinkslist, #maincontent").css({
+            "transition": "none",
+            "transition-timing-function": "none"
+        })
+        if($(window).width() >= 650) { 
+            $("#navtoggle i").removeClass("fa-bars");
+            $("#navtoggle i").addClass("fa-chevron-left");
+        } else if ($(window).width() < 650 && $(window).width() > 600) {
+            $("body").removeClass("navclosed");
+            $("#navtoggle i").addClass("fa-bars");
+            $("#navtoggle i").removeClass("fa-chevron-left");
+        } else {
+            $("#navtoggle i").addClass("fa-bars");
+            $("#navtoggle i").removeClass("fa-chevron-left");
+            $("body").addClass("navclosed");
+        }
+        let delay = ( function() { // Delay showing Transitions 
+            var timer = 0;
+            return function(callback, ms) {
+                clearTimeout (timer);
+                timer = setTimeout(callback, ms);
+            };
+        })();
+        delay(function(){mobileTransition();}, 10 );
     }
 
     // Tags ---------------------------------------------------------------------------
