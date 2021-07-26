@@ -30,7 +30,7 @@ $(document).ready(function(){
         $(this).addClass("current");
 
         updateScroller(focusID);
-        updateTags();
+        updateTags(pageID[focusID]);
     });
 
     $("#navtoggle").click(function(){  $("body").toggleClass("navclosed"); });
@@ -94,7 +94,7 @@ $(document).ready(function(){
     }
 
     // Tags ---------------------------------------------------------------------------
-    function updateTags(){
+    function updateTags(focusPage){
         $(".tags").empty();
         if($("#home").hasClass("show")) {
             $(".tags").css({ "display":"none" })
@@ -105,7 +105,7 @@ $(document).ready(function(){
             let H2ID = []
 
             $(".pages.show h2").each(function(){
-                let H2TEXT = $(this).text();
+                let H2TEXT = focusPage + "-" + $(this).text();
                 H2ID.push( H2TEXT.replace(/ /g,'') );
                 $(this).attr("id", H2TEXT.replace(/ /g,'')); //Add ID to H2s
                 tags.push($(this).text());

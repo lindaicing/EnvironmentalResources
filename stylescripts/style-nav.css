@@ -74,7 +74,7 @@ h1 {
     content:"";
     display: block;
     position: absolute;
-    top: 4%;
+    top: 0.8rem;
     left: 2.4rem;
     width: 1px;
     height: 23.6rem;
@@ -84,7 +84,7 @@ h1 {
 #scroller {
     display: block;
     position: absolute;
-    top: 4%;
+    top: 0.8rem;
     left: 2.2rem;
     width: 0.5rem;
     height: 0.5rem;
@@ -114,12 +114,12 @@ h1 {
         margin: 0 2rem;
         font-size: 1.2rem;
     }
-    #navlinkslist {
+    #navlinkslist, body.dark #navlinkslist {
         position: fixed;
         top: 2.75rem;
         left: auto;
         right: 0;
-        width: 50%;
+        width: 15.3rem;
         height: 100vh;
         padding: 1.4rem 0;
         background: var(--darkglass80);
@@ -130,18 +130,44 @@ h1 {
         transition: all 800ms cubic-bezier(0.5, 0, 0.5, 1);
         transition-timing-function: cubic-bezier(0.5, 0, 0.5, 1);
     }
-    body.navclosed #navlinkslist { right: -50%; }
-    #navlinkslist::before { top: 5%; }
-    #scroller { top: 5%; }
+    #navlinkslist {
+        background: var(--lightglass);
+        border-left: solid 1px var(--lightglassborder);
+        backdrop-filter: blur(4px);
+        box-shadow: -0.25rem 0.25rem 2rem 0 #0002;
+    }
+    #navlinkslist li {
+        color: var(--dark);
+    }
+    #navlinkslist li:hover {
+        color: var(--darktan);
+    }
+    body.dark #navlinkslist li {
+        color: var(--tan);
+    }
+    body.dark #navlinkslist li:hover {
+        color: var(--light);
+    }
+    body.navclosed #navlinkslist { right: -15.3rem; }
+    #navlinkslist::before { 
+        top: 2.2rem; 
+        background: var(--darktan); 
+        opacity: 0.5;
+    }
+    body.dark #navlinkslist::before { 
+        background: #fff4;
+    }
+    #scroller { 
+        top: 2.2rem; 
+        background: var(--darktan); 
+    }
+    body.dark #scroller { 
+        background: var(--light); 
+    }
     #navtoggle, body.navclosed #navtoggle {
         position: fixed;
         top: 1rem;
         right: 2rem;
         transform: none;
     }
-}
-
-@media screen and (max-width: 490px) {
-    #navlinkslist { width: 75%; }
-    body.navclosed #navlinkslist { right: -75%; }
 }

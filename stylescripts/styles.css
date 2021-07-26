@@ -95,9 +95,10 @@ footer {
 
 @media screen and (max-width: 650px) {
   #darkmode, .dark #darkmode:hover {
-    font-size: 1rem;
+    font-size: 0.9rem;
     top: 0.9rem;
     left: auto;
     right: 5rem;
   }
+  footer { z-index: 0;}
 }
