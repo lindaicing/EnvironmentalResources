@@ -102,6 +102,11 @@ ul {
     margin-left: 2.5rem;
 }
 
+ul ul {
+    margin-left: 0;
+    padding-left: 2.5rem;
+}
+
 em { font-weight: 900; }
 
 /* Sections -------------------------------------------------------------------- */
