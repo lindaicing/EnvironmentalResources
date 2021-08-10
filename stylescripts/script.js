@@ -1,5 +1,5 @@
-const pageID = ["home", "definition", "legislation_us", "legislation_itl", "timeline", "read", "watch", "listen", "projects", "people", "life"] 
-const pageNames = ["Home", "Definitions", "Legislation in US", "Legislation International", "Timeline", "Reading Nook", "Video Corner", "Podcasts", "Projects", "People", "Lifestyle"]
+const pageID = ["home", "definition", "legislation_us", "legislation_itl", "organizations", "timeline", "read", "watch", "listen", "projects", "people", "life"] 
+const pageNames = ["Home", "Definitions", "Legislation in US", "Legislation International", "Organizations", "Timeline", "Reading Nook", "Video Corner", "Podcasts", "Projects", "People", "Lifestyle"]
 let navLinks = [];
 
 $(document).ready(function(){
