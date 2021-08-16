@@ -65,6 +65,8 @@ h1 {
     margin: 0.5rem 2rem 0.5rem 3.5rem;
     color: var(--tan);
     cursor: pointer;
+    line-height: 1.5em;
+    margin-bottom: 0.5rem;
 }
 
 .navlinks:hover, .navlinks.current { color: var(--light); }

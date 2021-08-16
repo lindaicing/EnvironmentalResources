@@ -51,6 +51,7 @@ body.navclosed #maincontent {
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     font-size: 0.85em;
+    line-height: 1.5em;
 }
 
 .tags li a { 
@@ -86,8 +87,10 @@ p, li {
     text-align: left;
     color: var(--dark);
     line-height: 1.5em;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
 }
+
+li { line-height: 1.4em; }
 
 a { 
     text-decoration: none;
