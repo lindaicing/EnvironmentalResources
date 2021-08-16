@@ -1,5 +1,19 @@
-const pageID = ["home", "definition", "legislation_us", "legislation_itl", "organizations", "timeline", "read", "watch", "listen", "projects", "people", "life"] 
-const pageNames = ["Home", "Definitions", "Legislation in US", "Legislation International", "Organizations", "Timeline", "Reading Nook", "Video Corner", "Podcasts", "Projects", "People", "Lifestyle"]
+const pageID = ["home", "definition", "legislation_us", "legislation_itl", "organizations", "timeline", "read", "watch", "listen", "projects", "people", "life"] ;
+const pageNames = ["Home", "Definitions", "Legislation in US", "Legislation International", "Organizations", "Timeline", "Reading Nook", "Video Corner", "Podcasts", "Projects", "People", "Lifestyle"];
+const pageDesc = [
+    "Homepage",
+    "Important Definitions",
+    "Important United States environmental legislation",
+    "Important international environmental legislation",
+    "Important organizations with environmental influence",
+    "Timeline of major environmental events",
+    "Recommended articles, books, and scientific journals",
+    "Recommended documentaries, movies, and videos",
+    "Recommended audiobooks and podcasts",
+    "Neat environmentally-related projects",
+    "Influential and interesting people involved in environmental activities",
+    "How can you be more environmentally aware in your everyday life?"
+];
 let navLinks = [];
 
 $(document).ready(function(){
@@ -10,7 +24,7 @@ $(document).ready(function(){
         $("#pagelist").append("<div class='pages' id='" + pageID[i] + "'</div>"); 
 
         navLinks.push("nav_" + pageID[i]) //Setup nav
-        $("#navlinkslist").append("<li class='navlinks' id='" + navLinks[i] + "'>" + pageNames[i] + "</li>"); 
+        $("#navlinkslist").append("<li class='navlinks' id='" + navLinks[i] + "' title='" + pageDesc[i] + "' >" + pageNames[i] + "</li>"); 
     }
 
     $("#home").addClass("show");
@@ -126,5 +140,14 @@ $(document).ready(function(){
     if(localStorage.getItem("Darkmode")) { $("body").addClass("dark"); }
 
     // Upcoming Functions -------------------------------------------------------------
+    tagSort(); function tagSort(){
+        // Sort by...
+        // - Author (listen, read)
+        // - Media type: Book, article, scientific journal, etc. (read)
+        // - YouTube, Netflix, Etc. (listen, watch)
+        // - US vs International (timeline, pages combine?, organizations)
+        // - Vegan, Plant-Based, Product, Service (life)
+        // - Legislation, events, or both (timeline) 
+    }
 })
 

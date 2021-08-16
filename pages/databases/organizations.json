@@ -1,0 +1,19 @@
+{
+    "Title" :{
+        "aka": ["", ""],
+        "dateEstablished":[ "MM" , "DD" , "YYYY"],
+        "location":[""],
+        "peopleOrgs": ["", ""],
+        "relevantLinks": ["", ""],
+        "description" : ["OOO<br>","<br>OOO<br>","OOO<br>"],
+        "tags": ["", ""]
+    }, "Environmental Protection Agency" :{
+        "aka": ["EPA", "US EPA", "US Environmental Protection Agency"],
+        "dateEstablished":[ "MM" , "DD" , "YYYY"],
+        "location":["United States"],
+        "peopleOrgs": ["United States", "US President"],
+        "relevantLinks": ["https://www.epa.gov", "https://www.usa.gov/federal-agencies/environmental-protection-agency"],
+        "description" : ["Tasked with protecting the environment."],
+        "tags": ["environmental protection", "US Org"]
+    }
+}

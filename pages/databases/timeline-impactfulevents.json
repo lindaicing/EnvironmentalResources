@@ -1,0 +1,35 @@
+{
+    "Title" :{
+        "aka": ["", ""],
+        "date":[ "MM" , "DD" , "YYYY"],
+        "location":[""],
+        "peopleOrgs": ["United States", "US President"],
+        "relevantLinks": ["", ""],
+        "description" : ["OOO<br>","<br>OOO<br>","OOO<br>"],
+        "tags": ["", ""]
+    }, "Chernobyl Nuclear Explosion" :{
+        "aka": [
+            "Chernobyl Nuclear Disaster",
+            "Chernobyl Disaster"
+        ],
+        "date":[ "04" , "06" , "1986"],
+        "location":["Pripyat, Ukraine"],
+        "peopleOrgs": ["Anatoly Dyatlov", "USSR"],
+        "relevantLinks": [
+            "https://www.world-nuclear.org/information-library/safety-and-security/safety-of-plants/chernobyl-accident.aspx", 
+            "https://www.nationalgeographic.com/culture/article/chernobyl-disaster",
+            "https://www.britannica.com/event/Chernobyl-disaster",
+            "https://en.wikipedia.org/wiki/Chernobyl_disaster#Environmental_impact"
+        ],
+        "description" : [
+            "Considered the worst nuclear disaster in history.<br>",
+            "<br>Reactor 4 exploded."],
+        "tags": [
+            "energy",
+            "environmental damage", 
+            "nuclear", 
+            "nuclear reactor", 
+            "power"
+        ]
+    }
+}
